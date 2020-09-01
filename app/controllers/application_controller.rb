@@ -1,18 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   
-  def new
-    @user = User.new
-  end
-
-  def create(configure_permitted_parameters)
-    @user.valid?
-    if @user.save
-      redirect_to root_path
-    else
-      render "new"
-    end
-  end
-
   private
 
   def configure_permitted_parameters
