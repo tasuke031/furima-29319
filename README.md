@@ -11,7 +11,7 @@
 | first_name     | string  | null: false |
 | family_reading | string  | null: false |
 | first_reading  | string  | null: false |
-| birth_day      | date    | null: false |
+| birthday       | date    | null: false |
 ### Association
 
 - has_many :items
