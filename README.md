@@ -26,7 +26,7 @@
 | image        | text       | null: false                    |
 | price        | integer    | null: false                    |
 | description  | text       | null: false                    |
-| genre        | integer    | null: false                    |
+| category     | integer    | null: false                    |
 | status       | integer    | null: false                    |
 | delivery_fee | integer    | null: false                    |
 | prefecture   | integer    | null: false                    |
