@@ -9,6 +9,11 @@ AllCops:
    - "node_modules/**/*"
    - "Gemfile"
    - "spec/models/*"
+   - "app/models/prefecture.rb"
+   - "app/models/category.rb"
+   - "app/models/status.rb"
+   - "app/models/delivery_fee.rb"
+   - "app/models/delivery_day.rb"
 
 
 # 1行あたりの文字数をチェックする

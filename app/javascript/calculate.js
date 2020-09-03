@@ -5,10 +5,14 @@ function calculateTotal() {
   const profitPrice = document.getElementById("profit")
 
   itemPrice.addEventListener('input', function(){
-    const tax = itemPrice.value * 0.1
-    const profit = itemPrice.value * 0.9
+    const a = itemPrice.value * 0.1
+    const b = itemPrice.value * 0.9
+    
+    const tax = Math.floor(a)
+    const profit = Math.floor(b)
+
     taxPrice.innerHTML = tax
-    profitPrice.innerHTML = profit  
+    profitPrice.innerHTML = profit
   })
 }
 
