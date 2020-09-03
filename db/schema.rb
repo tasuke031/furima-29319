@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_052139) do
     t.integer "delivery_fee", null: false
     t.integer "prefecture", null: false
     t.integer "delivery_day", null: false
+    t.boolean "buyed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
