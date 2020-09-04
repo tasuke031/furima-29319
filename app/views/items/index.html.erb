@@ -130,7 +130,7 @@
 
         <% @items.each do |item| %>
           <li class='list'>
-            <%= link_to item_path(item) do %>
+            <%= link_to item_path(item.id) do %>
             <div class='item-img-content'>
               <%= image_tag item.image.variant(resize:'207x207'), class: "item-img" if item.image.attached? %>
 
@@ -182,6 +182,7 @@
         </li>
       <%# //商品がある場合は表示されないようにしましょう %>
       <%# /商品がない場合のダミー %>
+      
     </ul>
   </div>
   <%# /商品一覧 %>
