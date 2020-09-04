@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @items = Item.find(params[:id])
   end
 
   def update
