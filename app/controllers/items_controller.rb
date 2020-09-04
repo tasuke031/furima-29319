@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
   end
 
   def edit
@@ -36,9 +35,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy
-    @item.destroy
-    redirect_to root_path
+  def destroy    
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private

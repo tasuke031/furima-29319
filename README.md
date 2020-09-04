@@ -23,7 +23,7 @@
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | name         | string     | null: false                    |
-| image        | text       | null: false                    |
+| buyed        | boolean    |                                |
 | price        | integer    | null: false                    |
 | description  | text       | null: false                    |
 | category     | integer    | null: false                    |
