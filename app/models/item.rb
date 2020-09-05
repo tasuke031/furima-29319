@@ -15,5 +15,4 @@ class Item < ApplicationRecord
     validates :delivery_day, numericality: { other_than: 0, messege: 'select' }
     validates :prefecture, numericality: { other_than: 0, messege: 'select' }
   end
-
 end
