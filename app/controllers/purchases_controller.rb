@@ -1,9 +1,10 @@
 class PurchasesController < ApplicationController
+
   def index
   end
 
   def create
-    @purchase = Purchase.new(purchase_params)
+    @purchase = PurchaseDelivery.new(purchase_params)
     if @purchase.valid?
       pay_item
       @purchase.save
@@ -16,7 +17,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:token)
+    params.require(:purchase_delivery).permit(:token).merge(item_id: item.id, price: price, user_id: user.id)
   end
 
   def pay_item
