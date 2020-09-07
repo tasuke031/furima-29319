@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:index, :create]
   end
-  
+
   get 'items/new', to: 'items#calculate'
 end
