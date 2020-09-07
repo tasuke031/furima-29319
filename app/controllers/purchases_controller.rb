@@ -12,6 +12,10 @@ class PurchasesController < ApplicationController
       redirect_to root_path
     end
 
+    if Purchase.find_by(item_id: @item.id)
+      redirect_to root_path
+    end
+
   end
   
   def create
