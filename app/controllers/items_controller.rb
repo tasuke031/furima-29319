@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :edit]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -27,6 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.user_id != current_user.id
+      redirect_to item_path
+    end
   end
 
   def update
