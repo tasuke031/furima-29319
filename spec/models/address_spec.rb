@@ -52,5 +52,17 @@ RSpec.describe Address, type: :model do
       expect(@address.errors.full_messages).to include("Phone number can't be blank")
     end
 
+    it "phone_numberが12桁異常だと購入できないこと" do
+      @address.phone_number = '123456789012'
+      @address.valid?
+      expect(@address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+    end
+
+    it "phone_numberに-(ハイフン)が含まれていると購入できないこと" do
+      @address.phone_number = '000-000-000'
+      @address.valid?
+      expect(@address.errors.full_messages).to include("Phone number is invalid")
+    end
+
   end
 end
