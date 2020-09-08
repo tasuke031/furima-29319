@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
+    @purchases = Purchase.all
   end
 
   def new
@@ -22,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @purchase = Purchase.find_by(item_id: @item.id)
   end
 
   def edit
@@ -35,7 +37,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy
     if @item.destroy
       redirect_to root_path
     else
