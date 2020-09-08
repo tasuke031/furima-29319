@@ -5,6 +5,7 @@ class Address
   attr_accessor :token, :user_id, :item_id, :postal_code, :prefecture, :city, :house_number, :building, :phone_number
 
   with_options presence: true do
+    validates :token
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
     validates :city
     validates :house_number
