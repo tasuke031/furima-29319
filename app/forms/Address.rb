@@ -1,5 +1,4 @@
 class Address
-
   include ActiveModel::Model
 
   attr_accessor :token, :user_id, :item_id, :postal_code, :prefecture, :city, :house_number, :building, :phone_number
@@ -12,7 +11,7 @@ class Address
     validates :phone_number, format: { with: /\d\z/ }
   end
 
-    validates :prefecture, numericality: { other_than: 0, message: "select" }
+  validates :prefecture, numericality: { other_than: 0, message: 'select' }
 
   def save
     purchase = Purchase.create!(user_id: user_id, item_id: item_id)
