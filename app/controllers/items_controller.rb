@@ -30,8 +30,8 @@ class ItemsController < ApplicationController
     if @item.user_id != current_user.id
       redirect_to item_path
     elsif
-      @purchase = Purchase.find_by_id(item_id: @item.id)
-      @item.id = @purchase.item.id
+      @purchase = Purchase.find_by(item_id: @item.id)
+      @item.id == @purchase.item_id
       redirect_to item_path
     end
   end
