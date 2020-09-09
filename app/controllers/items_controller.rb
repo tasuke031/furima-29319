@@ -27,7 +27,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @purchase = Purchase.find_by(item_id: @item.id)
     if @item.user_id != current_user.id
+      redirect_to item_path
+    elsif
+      @item.id = @purchase.item.id
       redirect_to item_path
     end
   end
