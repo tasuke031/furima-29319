@@ -204,3 +204,32 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.favorite-star-icon{
+  height: 20px;
+  width: 20px;
+}
+.favorite-btn {
+  height: 30px;
+  width: 20px;
+}
+
+.report-btn{
+  height: 30px;
+  width: 20px;
+}
+
+.report-flag-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.comment-btn {
+  height: 50px;
+  width: 20vw;
+}
+
+.comment-flag-icon {
+  height: 20px;
+  width: 25px;
+}
