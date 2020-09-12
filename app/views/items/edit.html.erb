@@ -17,8 +17,12 @@ app/assets/stylesheets/items/new.css %>
         出品画像
         <span class="indispensable">必須</span>
       </div>
+
+      
       <div class="click-upload">
-      <div id='image-list'></div>
+        <%# 下記2行、出品時の商品画像表示 && 商品差し替え時の表示画像変更%>
+        <%= image_tag @item.image.variant(resize:'207x207'), id:'item-img', class: "item-img" if @item.image.attached? %>
+        <div id='image-list'></div>
         <p>
           クリックしてファイルをアップロード
         </p>

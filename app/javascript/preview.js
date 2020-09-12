@@ -13,16 +13,19 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     };
 
     document.getElementById('item-image').addEventListener('change', function(e){
-      
+      const currentImage = document.getElementById('item-img')
       const imageContent = document.querySelector('img');
-      if (imageContent){
+      if (currentImage){
+        currentImage.remove();
+        imageContent.remove();
+      }else if (imageContent){
         imageContent.remove();
       }
       
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
 
-      createImageHTML(blob)；
+      createImageHTML(blob)
     });
   });
 }
