@@ -16,4 +16,29 @@ class User < ApplicationRecord
     validates :first_reading, format: { with: /\A[ァ-ン]/ }
     validates :birthday
   end
+
+  def self.guest
+    find_or_create_by(email: 'guest1@example.com')do |user|
+      user.nickname = "taro"
+      user.password = SecureRandom.urlsafe_base64
+      user.family_name = "山田"
+      user.first_name = "太郎"
+      user.family_reading = "ヤマダ"
+      user.first_reading = "タロウ"
+      user.birthday = "2000-01-01"
+    end
+  end
+
+  def self.new_guest
+    find_or_create_by(email: 'guest2@example.com')do |user|
+      user.nickname = "jiro"
+      user.password = SecureRandom.urlsafe_base64
+      user.family_name = "佐藤"
+      user.first_name = "二郎"
+      user.family_reading = "サトウ"
+      user.first_reading = "ジロウ"
+      user.birthday = "2000-01-01"
+    end
+  end
+  
 end
