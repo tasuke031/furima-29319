@@ -9,7 +9,6 @@ class PurchasesController < ApplicationController
 
     if user_signed_in? && @item.user_id == current_user.id
       redirect_to root_path
-
     elsif Purchase.find_by(item_id: @item.id)
       redirect_to root_path
     end
