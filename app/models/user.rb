@@ -20,7 +20,7 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by(email: 'guest1@example.com')do |user|
       user.nickname = "taro"
-      user.password = "passwordpass"
+      user.password = SecureRandom.urlsafe_base64
       user.family_name = "山田"
       user.first_name = "太郎"
       user.family_reading = "ヤマダ"
@@ -32,7 +32,7 @@ class User < ApplicationRecord
   def self.new_guest
     find_or_create_by(email: 'guest2@example.com')do |user|
       user.nickname = "jiro"
-      user.password = "passwordword"
+      user.password = SecureRandom.urlsafe_base64
       user.family_name = "佐藤"
       user.first_name = "二郎"
       user.family_reading = "サトウ"
